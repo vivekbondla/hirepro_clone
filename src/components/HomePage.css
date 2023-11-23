@@ -1,0 +1,28 @@
+/* .job_container{
+    display: flex;
+    flex-direction: column;
+    
+} */
+
+.job_container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.filters {
+  width: 30%;
+  margin-left: 8rem;
+  font-size: 1.1rem;
+}
+.jobs {
+  width: 50%;
+  margin-left: 2rem;
+}
+
+.filter li{
+  width: 70%;
+  list-style-type: none;
+  margin-bottom: 0.2rem;
+  margin-left: 0.2rem;
+}

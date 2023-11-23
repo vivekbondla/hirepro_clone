@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(14, 13, 52);
+  color: white;
+  padding: 15px;
+}
+
+.name {
+    width: 30%;
+    font-size:x-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-weight: 500;
+   
+}
+
+.button_div{
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+}
+
+.button{
+    background-color: rgb(208, 167, 31);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+    
+}
