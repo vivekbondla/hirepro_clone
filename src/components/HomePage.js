@@ -1,54 +1,136 @@
-import React from "react";
-import Card from "../UI/Card";
-
+import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import SingleJob from "./SingleJob";
-import NavBar from "../UI/NavBar";
 import CheckBoxItems from "./CheckBoxItems";
+import JobOverlay from "./JobOverlay";
 
 const DUMMY_JOBS = [
   {
-    title: "Frontend Developer",
+    title: "Frontend",
     description: "View Job Description 1",
-    location : 'Hyderabad'
+    location: "Hyderabad",
+    category: "Frontend",
   },
   {
-    title: "Title 2",
+    title: "Backend",
     description: "View Job Description 2",
-    location : 'Hyderabad'
+    location: "Hyderabad",
+    category: "Backend",
+   
+    
   },
   {
-    title: "Title 3",
+    title: "FullStack",
     description: "View Job Description 3",
-    location : 'Chennai'
+    location: "Chennai",
+    category: "Fullstack",
+   
   },
   {
-    title: "Title 4",
+    title: "Java",
     description: "View Job Description 4",
-    location : 'Bangalore'
+    location: "Bangalore",
+    category: "Java",
+    
   },
   {
-    title: "Title 5",
+    title: "Devops",
     description: "View Job Description 5",
-    location : 'Kolkata'
+    location: "Kolkata",
+    category: "Devops",
+   
   },
   {
-    title: "Title 6",
+    title: "Cloud",
     description: "View Job Description 6",
-    location : 'Kolkata'
+    location: "Kolkata",
+    category: "Cloud",
+   
   },
 ];
+
 const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedLocations, setSelectedLocations] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [selectedJob, setSelectedJob] = useState(null);
+ 
+  const handleViewDescription = (job) => {
+    console.log('Viewing description for job:', job);
+    setSelectedJob(job);
+  };
+
+  const handleCloseOverlay = () => {
+    setSelectedJob(null);
+  };
+
+  useEffect(() => {
+    // Filter jobs based on selected categories and locations
+    const newFilteredJobs = DUMMY_JOBS.filter((job) => {
+      const categoryFilter =
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(job.category);
+
+      const locationFilter =
+        selectedLocations.length === 0 ||
+        selectedLocations.includes(job.location);
+
+      const searchFilter =
+        job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        job.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+      return categoryFilter && locationFilter && searchFilter;
+    });
+
+    // Update the state with the filtered jobs
+    setFilteredJobs(newFilteredJobs);
+  }, [selectedCategories, selectedLocations, searchTerm]);
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
+
+  const handleFilter = (categories, locations) => {
+    setSelectedCategories(categories);
+    setSelectedLocations(locations);
+  };
+
   return (
     <>
-      <div className="job_container">
-        {/* <SingleJob title={DUMMY_JOBS.title}/> */}
-       <CheckBoxItems/>
-        <div className="jobs"> {DUMMY_JOBS.map((job,index) => (
-          <SingleJob key={index} title={job.title} description={job.description} />
-        ))}</div>
-        
+      <div className="home-container">
+        <div className="top-section">
+          <CheckBoxItems onFilter={handleFilter} />
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search for jobs..."
+              value={searchTerm}
+              onChange={(e) => handleSearch(e.target.value)}
+            />
+            {searchTerm && (
+              <div className="search-results">
+                {/* <p>Results for: "{searchTerm}"</p> */}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="jobs">
+          {filteredJobs.map((job, index) => (
+            <SingleJob
+              key={index}
+              title={job.title}
+              description={job.category}
+              location={job.location}
+              onViewDescription={() => handleViewDescription(job)}
+            />
+          ))}
+        </div>
       </div>
+      {selectedJob && (
+        <JobOverlay role={selectedJob.category} onClose={handleCloseOverlay} />
+      )}
     </>
   );
 };
