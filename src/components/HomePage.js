@@ -12,10 +12,10 @@ const DUMMY_JOBS = [
     category: "Frontend",
   },
   {
-    title: "Backend",
+    title: "Fullstack",
     description: "View Job Description 2",
     location: "Hyderabad",
-    category: "Backend",
+    category: "Fullstack",
    
     
   },

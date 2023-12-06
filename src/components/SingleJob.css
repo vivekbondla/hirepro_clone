@@ -1,0 +1,9 @@
+.view-description {
+    color: blue; /* Default color */
+    cursor: pointer;
+  }
+  
+  .view-description:hover {
+    color: red; /* Color on hover */
+  }
+  
