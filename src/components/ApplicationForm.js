@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
-
+import ResumeUpload from './ResumeUpload';
+import './ApplicationForm.css';
  
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -90,6 +90,9 @@ const ApplicationForm = () => {
  
         <button type="submit">Submit</button>
       </form>
+      <div className="resume-upload-container">
+        <ResumeUpload />
+      </div>
     </div>
   );
 };
