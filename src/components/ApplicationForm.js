@@ -223,7 +223,7 @@ const ApplicationForm = () => {
 </div>
        </div>
        <div>
-        <button onClick={handleChange}>Submit</button>
+        <button onClick={handleChange}>Submitt</button>
        </div>
       </form>
     </div>

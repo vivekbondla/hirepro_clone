@@ -43,7 +43,7 @@ const Gender=()=>{
           Other
         </label>
       </form>
-      <input Value={selectedGender}/>
+      <input Value= {selectedGender}/>
     </div>
   );
 }

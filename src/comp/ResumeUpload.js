@@ -34,7 +34,7 @@ const ResumeUpload=()=>{
   
     return (
       <div>
-        <label htmlFor="ResumeUpload">Resume/CV:</label>
+        <label htmlFor="ResumeUpload">Resume/CV</label>
         <input type="file" onChange={handleFileChange} 
         onClick={handleUpload}/>
       </div>

@@ -8,7 +8,7 @@ const DateComp=()=> {
   return (
     <div>
         <div>
-            <label>Experience</label>
+            <label>Experience </label>
             <p>
             {day}
             {month}
