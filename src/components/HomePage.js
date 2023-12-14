@@ -3,7 +3,8 @@ import "./HomePage.css";
 import SingleJob from "./SingleJob";
 import CheckBoxItems from "./CheckBoxItems";
 import JobOverlay from "./JobOverlay";
-
+import NavBar from "../UI/NavBar";
+ 
 const DUMMY_JOBS = [
   {
     title: "Frontend",
@@ -17,7 +18,7 @@ const DUMMY_JOBS = [
     location: "Hyderabad",
     category: "Fullstack",
    
-    
+   
   },
   {
     title: "FullStack",
@@ -31,7 +32,7 @@ const DUMMY_JOBS = [
     description: "View Job Description 4",
     location: "Bangalore",
     category: "Java",
-    
+   
   },
   {
     title: "Devops",
@@ -48,73 +49,62 @@ const DUMMY_JOBS = [
    
   },
 ];
-
+ 
 const HomePage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedLocations, setSelectedLocations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
  
   const handleViewDescription = (job) => {
-    console.log('Viewing description for job:', job);
+    console.log("Viewing description for job:", job);
     setSelectedJob(job);
   };
-
+ 
   const handleCloseOverlay = () => {
     setSelectedJob(null);
   };
-
+ 
   useEffect(() => {
-    // Filter jobs based on selected categories and locations
+    // Filter jobs based on selected categories, locations, and search term
     const newFilteredJobs = DUMMY_JOBS.filter((job) => {
       const categoryFilter =
         selectedCategories.length === 0 ||
         selectedCategories.includes(job.category);
-
+ 
       const locationFilter =
         selectedLocations.length === 0 ||
         selectedLocations.includes(job.location);
-
+ 
       const searchFilter =
+        searchTerm === "" ||
         job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        job.description.toLowerCase().includes(searchTerm.toLowerCase());
-
+        job.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        job.location.toLowerCase().includes(searchTerm.toLowerCase());
+ 
       return categoryFilter && locationFilter && searchFilter;
     });
-
+ 
     // Update the state with the filtered jobs
     setFilteredJobs(newFilteredJobs);
   }, [selectedCategories, selectedLocations, searchTerm]);
-
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-  };
-
-
+ 
   const handleFilter = (categories, locations) => {
     setSelectedCategories(categories);
     setSelectedLocations(locations);
   };
-
+ 
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+ 
   return (
     <>
+      <NavBar onSearch={handleSearch} />
       <div className="home-container">
         <div className="top-section">
           <CheckBoxItems onFilter={handleFilter} />
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search for jobs..."
-              value={searchTerm}
-              onChange={(e) => handleSearch(e.target.value)}
-            />
-            {searchTerm && (
-              <div className="search-results">
-                {/* <p>Results for: "{searchTerm}"</p> */}
-              </div>
-            )}
-          </div>
         </div>
         <div className="jobs">
           {filteredJobs.map((job, index) => (
@@ -134,5 +124,5 @@ const HomePage = () => {
     </>
   );
 };
-
+ 
 export default HomePage;
