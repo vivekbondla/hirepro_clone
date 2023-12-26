@@ -50,12 +50,13 @@ const CheckBoxItems = ({ onFilter }) => {
   return (
     <div className="filters">
       <Card className="filter">
-        <h5>Categories</h5>
+        <h5 className="h5heading">Categories</h5>
         <ul>
           {checkBoxCategories.map((item) => (
-            <li key={item}>
-              <label htmlFor={item}>
+            <li className="list" key={item}>
+              <label className="boxlable" htmlFor={item}>
                 <input
+                className="inputbox"
                   id={item}
                   name="category"
                   value={item}
@@ -69,12 +70,13 @@ const CheckBoxItems = ({ onFilter }) => {
         </ul>
       </Card>
       <Card className="filter">
-        <h5>Locations</h5>
+        <h5 className="h5heading">Locations</h5>
         <ul>
           {checkBoxLocations.map((item) => (
-            <li key={item}>
-              <label htmlFor={item}>
+            <li className="list" key={item}>
+              <label className="boxlable" htmlFor={item}>
                 <input
+                className="inputbox"
                   id={item}
                   name="location"
                   value={item}

@@ -1,0 +1,62 @@
+/* ContactUs.css */
+.container-image {
+    background-size: cover;
+    width: 100%;
+}
+
+.contact-image {
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+ .contact-container {
+     background-image: url("https://www.technocrazed.com/wp-content/uploads/2015/12/black-wallpaper-to-set-as-background-10.jpg");
+  
+} 
+.contact-us-container {
+    /* Add container styles */
+    display: flex;
+  align-items:flex-start;
+  justify-content: space-around;
+ 
+
+  
+  }
+  .contactUs-heading {
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+  }
+  .contact-section, .branches-section, .hours-section, .branch-office-section, .map-section {
+    /* Add section styles */
+    margin-bottom: 20px;
+    font-size: 22px;
+
+    
+  }
+  .contact-heading, .branches-heading, .hours-heading, .office-heading {
+    color:aliceblue;
+  }
+  
+  
+  
+  .sub-contact {
+    /* Add styles for sub-contact */
+    font-size: 1.2em;
+    color:aliceblue;
+  }
+  
+  .contact-text, .branches-section p, .hours-section p, .branch-office-section p {
+    /* Add styles for text paragraphs */
+    color:aliceblue;
+  }
+  
+  .google-map {
+    /* Add styles for Google Map iframe */
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    justify-content: space-around;
+    margin: 10px;
+  }
+  

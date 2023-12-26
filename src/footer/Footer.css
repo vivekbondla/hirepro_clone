@@ -1,0 +1,106 @@
+
+/* Footer.css */
+.footer-container {
+  /* Add styling for the outermost container */
+  background-color: #c6dbba59; /* Adjust the color as needed */
+  padding: 20px; /* Add padding to create space around the content */
+  border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
+  
+}
+#image {
+  height: 9%;
+  width: 27%;
+}
+
+.logos {
+  /* Add styling for your logo */
+  width: 220%;
+  height: auto;
+}
+
+
+  
+
+.flex {
+  display:inline-flex;
+
+}
+.vr-footer-section-icon-container {
+  padding: 10px;
+}
+
+.icon {
+  /* Add styling for your social media icons */
+  font-size: 34px;
+  color: #110f0f; /* Adjust the color as needed */
+  transition: color 0.3s ease; /* Add a smooth transition effect for color changes */
+}
+
+.icon:hover {
+  color: #6a00ff; /* Adjust the hover color as needed */
+}
+
+.vr-footer-section-text {
+  /* Add styling for your footer text */
+  font-size: 20px;
+  color: #230a0a; /* Adjust the color as needed */
+  margin: 0%;
+  
+}
+
+.hr-line {
+  /* Add styling for your horizontal line */
+  border-color: #ddd; /* Adjust the color as needed */
+}
+.icon-hr-line {
+  border: 2px inset grey;
+}
+
+.vr-footer-section-copyright {
+  /* Add styling for your copyright text */
+  font-size: 25px;
+  color: #180a0a; /* Adjust the color as needed */
+}
+.sub-container {
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+}
+.branches {
+font-size: 25px;
+margin: 0%;
+}
+.contact {
+  font-size: 25px;
+  padding: 0%;
+  margin: 0%;
+}
+#sub-contact {
+  margin: 0%;
+  color: #230a0a;
+}
+.icon-heading {
+  margin: 0%;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none; /* Remove underlines */
+  color: #333; /* Set the link color to your preference */
+ 
+ 
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+ 
+  color: #555; /* Change text color on hover if needed */
+}

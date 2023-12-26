@@ -1,63 +1,65 @@
 /* RegistrationForm.css */
 
 .registration-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-  
-  .registration-title {
-    font-size: 24px;
-    text-align: center;
-    color: #333;
-  }
-  
-  .registration-instructions {
-    margin-top: 20px;
-  }
-  
-  .instruction-heading {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .instruction-list {
-    font-size: 16px;
-  }
-  
-  .next-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .next-button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Style the ReCAPTCHA container */
-  .g-recaptcha {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  .captcha {
-    text-align: center;
-  }
-  
-  /* Optional: Add additional styling to the ReCAPTCHA component */
-  /* .g-recaptcha {
-     // Add your styles here
-  } */
-  
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.registration-title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.registration-instructions {
+  margin-top: 20px;
+}
+
+.instruction-heading {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.instruction-list {
+  margin-top: 10px;
+}
+
+.instruction-list h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.instruction-list ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Style for ReCAPTCHA */
+.g-recaptcha {
+  margin-top: 20px;
+}
+
+.next-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.next-button:hover {
+  background-color: #45a049;
+}

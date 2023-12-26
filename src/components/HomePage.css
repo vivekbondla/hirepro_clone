@@ -14,7 +14,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
  
-.filter h5 {
+.filter h5heading {
   margin-bottom: 0.5rem;
 }
  
@@ -23,23 +23,23 @@
   list-style-type: none;
 }
  
-.filter li {
+.filter list {
   margin-bottom: 0.5rem;
 }
  
-.filter label {
+.filter boxlabel {
   display: flex;
   align-items: center;
 }
  
-.filter input {
+.filter inputbox {
   margin-right: 0.5rem;
 }
 .search-bar {
   margin-top: 1rem; /* Adjust the top margin as needed */
 }
  
-.search-bar input {
+.search-bar inputbox {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
