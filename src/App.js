@@ -6,6 +6,7 @@ import ApplicationForm from './components/ApplicationForm';
 import HomePage from './components/HomePage';
 import Footer from './footer/Footer';
 import ContactUs from './menusection/ContactUs';
+import Services from './menusection/Services';
 
  
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/application-form" element={<ApplicationForm />} />
           
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/services" element={<Services />} />
           
         </Routes>
       </Suspense>

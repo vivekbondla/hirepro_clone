@@ -1,0 +1,312 @@
+/* Assuming you have a global stylesheet, you can add the following styles specific to the Services component */
+
+.services-heading {
+  background-image: url("https://th.bing.com/th/id/R.d9d38c3829608dba961c679a45b6a6c4?rik=hImtc0OggT2Tlg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f04%2fDesktop-wallpapers-3d-images-pictures.jpg&ehk=N7VHpSlMPbBbJc4A1ifUqCiLrGBXkXT%2f3KSvNtzK1gg%3d&risl=&pid=ImgRaw&r=0");
+color: #f8f8f8;
+
+background-size: cover;
+  height: 140px;
+  
+
+  
+}
+.service-heading {
+  font-size: 50px;
+ padding-top: 30px;
+ padding-left: 50px;
+ color: #f8f8f8;
+
+
+}
+
+
+
+.services-section {
+  margin-bottom: 50px;
+}
+.services-container {
+  display: flex;
+align-items:flex-start;
+justify-content: space-around;
+background-color: black;
+
+
+}
+
+.services-section  {
+  font-size: 24px;
+  color:#f8f8f8;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  color:#f8f8f8;
+  line-height: 1.5;
+}
+
+/* Adjust the color and styles as needed */
+
+/* Cyber Security */
+.CyberSecurity-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Cyber-Security-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Database */
+.Database-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+
+.Database-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Data Digitizing */
+.DataDigitizing-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Data-Digitizing-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Web Design */
+.WebDesign-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Web-Design-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Digital Marketing */
+.DigitalMarketing-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Digital-Marketing-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Certifications */
+.Certifications-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Certifications-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* IT Development */
+.ITDevelopment-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.IT-Development-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Cloud Service */
+.CloudService-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Cloud-Service-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Mobile App */
+.MobileApp-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Mobile-App-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Permanent Recruitment */
+.PermanentRecruitment-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Permanent-Recruitment-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Bulk Hiring */
+.BulkHiring-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Bulk-Hiring-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Contract Staffing */
+.ContractStaffing-section {
+  background-color:darkslategrey;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  height: 350px;
+  width: 650px;
+}
+.Contract-Staffing-data {
+  color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+/* Hover effect for all services sections */
+.CyberSecurity-section:hover,
+.Database-section:hover,
+.DataDigitizing-section:hover,
+.WebDesign-section:hover,
+.DigitalMarketing-section:hover,
+.Certifications-section:hover,
+.ITDevelopment-section:hover,
+.CloudService-section:hover,
+.MobileApp-section:hover,
+.PermanentRecruitment-section:hover,
+.BulkHiring-section:hover,
+.ContractStaffing-section:hover {
+  background-color: #2c3e50; /* Change the color as per your design */
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Optional: Add a transition for smoother hover effect */
+.CyberSecurity-section,
+.Database-section,
+.DataDigitizing-section,
+.WebDesign-section,
+.DigitalMarketing-section,
+.Certifications-section,
+.ITDevelopment-section,
+.CloudService-section,
+.MobileApp-section,
+.PermanentRecruitment-section,
+.BulkHiring-section,
+.ContractStaffing-section {
+  transition: background-color 0.3s ease;
+  
+}

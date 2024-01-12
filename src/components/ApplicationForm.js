@@ -1,26 +1,32 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import ResumeUpload from '../ApplicationComponent/ResumeUpload';
 import PhotoUploader from '../ApplicationComponent/PhotoUploader';
 import './ApplicationForm.css';
 import Countrystatecity from '../ApplicationComponent/Countrystatecity';
-
+import axios from 'axios';
+ 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    login:'',
     phoneNumber: '',
     email: '',
     address: '',
     dateOfBirth: '',
     programmingLanguages: '',
     skills: '',
+    zip:'',
     gender: [], // Updated for storing gender options
     currentlyWorking: false, // Added for "Currently working here" checkbox
   });
-
+ 
+ 
+ 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
+ 
     // Handle checkboxes separately
     if (type === 'checkbox') {
       setFormData({
@@ -34,20 +40,48 @@ const ApplicationForm = () => {
       });
     }
   };
-
+ 
   const handleGenderChange = (selectedGender) => {
     setFormData({
       ...formData,
       gender: selectedGender,
     });
   };
-
-  const handleSubmit = (e) => {
+ 
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    // Handle form submission logic (send data to the server or perform actions)
+    try {
+      // Send the form data to Firebase Realtime Database using axios
+      await axios.post('https://jobs-portal-61166-default-rtdb.firebaseio.com/.json', formData);
+ 
+      console.log('Form Data csubmitted successfully:', formData);
+      // Handle any additional logic here
+    } catch (error) {
+      console.error('Error submitting form data:', error);
+      // Handle error logic if needed
+    }
   };
-
+ 
+  useEffect(() => {
+    const sendFormDataToBackend = async () => {
+      try {
+        // Send the form data to Firebase Realtime Database using axios
+        await axios.post('https://jobs-portal-61166-default-rtdb.firebaseio.com/.json', formData);
+        console.log('Form Data submitted successfully:', formData);
+        // Handle any additional logic here
+      } catch (error) {
+        console.error('Error submitting form data:', error);
+        // Handle error logic if needed
+      }
+    };
+ 
+    // Check if the form data is not empty before sending it to the backend
+    if (Object.keys(formData).length > 0) {
+      sendFormDataToBackend();
+    }
+  }, [formData]);
+ 
+ 
   return (
     <div className="application-form-container">
       <form onSubmit={handleSubmit}>
@@ -66,7 +100,7 @@ const ApplicationForm = () => {
           <label className="login-2" htmlFor="login">
             Login*
           </label>
-          <input type="email" id="login" name="login" value={formData.firstName} onChange={handleChange} required />
+          <input type="email" id="login" name="login" value={formData.login  } onChange={handleChange} required />
           <label className="password" htmlFor="password">
             Password*
           </label>
@@ -76,7 +110,7 @@ const ApplicationForm = () => {
           </label>
           <input type="password" id="reenterPassword" />
         </div>
-
+ 
         <h2>Enter Your information</h2>
         <div className="enter-1">
           <label className="salutation-1">Salutation</label>
@@ -128,21 +162,21 @@ const ApplicationForm = () => {
           </label>
           <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
-
+ 
         <h2 className="phone-1">Phones(1)</h2>
         <div className="phone">
-          <label className="type-1">Type*</label>
-          <select className="type-2">
-            <option>Mobile</option>
-            <option>Home</option>
-          </select>
-          <br />
-          <label className="number-1">Number(Country Code & 10Digits)*</label>
-          <input type="numbers" value={formData.phoneNumber} onChange={handleChange} required />
-        </div>
-
+  <label className="type-1">Type*</label>
+  <select className="type-2">
+    <option>Mobile</option>
+    <option>Home</option>
+  </select>
+  <br />
+  <label className="number-1" htmlFor="phoneNumber">Number(Country Code & 10Digits)*</label>
+  <input type="number" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
+</div>
+ 
         <h2> Addresses</h2>
-
+ 
         <div className="address">
           <label className="type-3">Type*</label>
           <select className="type-3">
@@ -151,14 +185,14 @@ const ApplicationForm = () => {
           </select>
           <br />
           <label className="address-2">Address*</label>
-          <input type="text" value={formData.address} onChange={handleChange} required />
+          <input type="text" name="address" value={formData.address} onChange={handleChange} required />
           <Countrystatecity />
-
+ 
           <label className="postal-code">Zip/Postal Code*</label>
-          <input type="numbers" value={formData.email} onChange={handleChange} required />
-          
+          <input type="numbers" name="zip" value={formData.zip} onChange={handleChange} required />
+         
         </div>
-
+ 
         <div className="Job-1">
           <p>Are you open to Relocating to job Location?</p>
           <select className="relocating-1">
@@ -216,11 +250,11 @@ const ApplicationForm = () => {
           <input type="date" />
           <Countrystatecity />
         </div>
-
+ 
         <h1>Work Experience</h1>
         <div className="work-2">
           <h2>Current Employment (1)*</h2>
-
+ 
           <label className="employer">Employer*</label>
           <input
             type="text"
@@ -229,9 +263,9 @@ const ApplicationForm = () => {
             onChange={handleChange}
             required
           />
-
+ 
 <Countrystatecity />
-
+ 
           <label className="job-title">Job Title*</label>
           <input
             type="text"
@@ -240,7 +274,7 @@ const ApplicationForm = () => {
             checked={formData.JobTitle}
             onChange={handleChange}
           />
-
+ 
           <label className="start-date">Start Date (Day / Month / Year)*</label>
           <input
             type="date"
@@ -250,7 +284,7 @@ const ApplicationForm = () => {
             required
           />
           <br />
-
+ 
           <label className="end-date">End Date (Day/ Month/ Year)*</label>
           <input
             type="date"
@@ -260,10 +294,10 @@ const ApplicationForm = () => {
             required
           />
         </div>
-
+ 
         <div>
           <h3 className="description">Description</h3>
-
+ 
           <textarea
             id="Description"
             name="Description"
@@ -294,7 +328,7 @@ const ApplicationForm = () => {
             <option>45 days</option>
           </select>
         </div>
-
+ 
         <div className="submit">
          
           <button type="submit" className="submit-1">
@@ -305,5 +339,7 @@ const ApplicationForm = () => {
     </div>
   );
 };
-
+ 
 export default ApplicationForm;
+ 
+ 
