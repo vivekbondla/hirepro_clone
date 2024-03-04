@@ -1,14 +1,24 @@
-import './App.css';
+
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './UI/NavBar';
+import RegistrationForm from './components/RegistrationForm';
+import ApplicationForm from './components/ApplicationForm';
 import HomePage from './components/HomePage';
-
-function App() {
+ 
+const App = () => {
   return (
-    <div className="App">
+    <Router>
       <NavBar />
-    <HomePage/>
-    </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/registration-form" element={<RegistrationForm />} />
+          <Route path="/application-form" element={<ApplicationForm />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
-}
-
+};
+ 
 export default App;
